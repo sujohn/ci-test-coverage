@@ -10,4 +10,4 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     COV_BIN="${COV_BIN}/Contents/MacOS/$f"
 fi
 
-llvm-cov report "${COV_BIN}"  -instr-profile=.build/debug/codecov/default.profdata -use-color `find Sources -type f -name "*.swift"`
+`which llvm-cov` report "${COV_BIN}"  -instr-profile=.build/debug/codecov/default.profdata -use-color `find Sources -type f -name "*.swift"`
